@@ -118,7 +118,7 @@
         </div>
         <div class="row mt"><a class="btn primary" href="#/live">Live courts</a><a class="btn" href="#/standings">Standings</a><a class="btn" href="#/team">Find my team</a></div>
       </div>
-      <a href="assets/poster.jpg" target="_blank" rel="noopener"><img class="poster" src="assets/poster.jpg" alt="PYS Open official poster"></a>
+      <a href="poster.jpg" target="_blank" rel="noopener"><img class="poster" src="poster.jpg" alt="PYS Open official poster"></a>
     </section>
     ${mine}
     <div class="page-head mt2"><div><div class="eyebrow">${live.length ? "On court now" : "Coming up"}</div><h2>${live.length ? "Live ties" : focus.length ? esc(D.slots.find((x) => x.id === focus[0].tie.slot).label) + " · " + X.fmt(focus[0].time) : "All done"}</h2></div><a href="#/schedule" class="btn sm">Full schedule</a></div>
