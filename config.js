@@ -6,8 +6,9 @@
 //  saved only in the browser you are using.
 // ============================================================
 window.PYS_CONFIG = {
-  SUPABASE_URL: "",        // e.g. "https://abcdxyz.supabase.co"
-  SUPABASE_ANON_KEY: "",   // the "anon public" key (safe to publish)
+  SUPABASE_URL: "https://pcevgjyeftlxznghdtdy.supabase.co",        // e.g. "https://abcdxyz.supabase.co"
+  SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBjZXZnanllZnRseHpuZ2hkdGR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTU0MzI2MDQsImV4cCI6MjExMTAwODYwNH0.uVzXHZiyFloNEd4NyWdXIk1RVVnvDk_HbZrBliy5fY0
+",   // the "anon public" key (safe to publish)
 
   EVENT: {
     name: "PYS Open",
