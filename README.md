@@ -1,7 +1,7 @@
 # PYS Open — Match Control site
 
 Live scores, standings, schedule and court calls for the **PYS Open Pickleball Tournament**
-(Nov 28, 2026 · Pickleball Reserve, Mabalacat City). It's a static site hosted free on GitHub Pages, with a free Supabase database for live scores.
+(Nov 28, 2026 · Pickleball World, CSFP). It's a static site hosted free on GitHub Pages, with a free Supabase database for live scores.
 
 ## Pages
 
