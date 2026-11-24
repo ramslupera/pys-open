@@ -405,7 +405,7 @@
   <li>Raise concerns calmly with your opponents first. Unresolved questions about rule application may be referred to Match Control.</li></ul>
   <h2>6. Team Timeout</h2><ul><li>Each team is allowed one timeout per game, lasting a maximum of one minute.</li><li>Call it while the ball is dead and before the next serve.</li><li>Timeouts must not be used to unnecessarily delay play.</li></ul>
   <h2>7. Medical Timeout and Injury</h2><ul><li>A player with an injury or sudden physical concern must stop play and notify opponents and Match Control immediately.</li>
-  <li>A medical timeout of up to three minutes may be allowed.</li><li>If the player cannot safely resume, the team retires from that game. The opposing team is awarded 11 points, and the retiring team keeps the score it had when play stopped.</li>
+  <li>A medical timeout of up to ten minutes may be allowed.</li><li>If the player cannot safely resume, the team retires from that game. The opposing team is awarded 11 points, and the retiring team keeps the score it had when play stopped.</li>
   <li>Notify Match Control immediately if the player or team cannot continue in later games or rounds.</li></ul>
   <h2>8. Withdrawal</h2><p>If a team withdraws from the tournament, its remaining round-robin ties are recorded as 3–0 wins for the opposing teams, with each game scored 11–0. Please notify Match Control promptly so affected players can be informed.</p>
   <h2>9. Match Calls, Late Arrival, and No-Show</h2><ul><li>Monitor the match queue using the QR code displayed at the venue.</li><li>Teams must report promptly to their assigned courts when officially called.</li>
