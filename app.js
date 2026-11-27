@@ -136,7 +136,7 @@
 
   views.live = () => {
     const es = X.eventStatus();
-    const courts = Array.from({ length: D.COURTS }, (_, i) => X.courtQueue(i + 1));
+    const courts = D.COURT_LIST.map((c) => X.courtQueue(c));
     return `<div class="page-head"><div><div class="eyebrow">Matchday</div><h1>Live courts</h1><p>${esc(es.text)}</p></div>
       <span class="pill ${es.kind === "live" ? "live" : es.kind === "done" ? "final" : "acc"}">${esc(es.title)}</span></div>
       <div class="courts">${courts.map(courtCard).join("")}</div>
@@ -185,7 +185,7 @@
         <span class="small muted">Ends ${X.fmt(sl.end)} · lineup due ${X.fmt(sl.lineup)}</span></div>
         <div class="grid g3">${ties.map((s) => tieCard(s)).join("")}</div>`).join("") || `<div class="card empty mt">No matches match your filters.</div>`;
     }
-    return `<div class="page-head"><div><div class="eyebrow">Official schedule · 9 courts</div><h1>Schedule</h1>
+    return `<div class="page-head"><div><div class="eyebrow">Official schedule · 9 courts (1–5, 9–12)</div><h1>Schedule</h1>
       <p>${D.ties.length} ties · ${D.ties.length * 3} games · 30 round-robin ties, 2 semifinals, Gold & Bronze. Awarding 2:45 PM.</p></div>
       ${seg("view", [["list", "Fixtures"], ["grid", "Court grid"]])}</div>
       ${sched.view === "list" ? `<div class="filters"><input id="sched-q" type="search" placeholder="Search team…" value="${esc(sched.q)}" style="flex:1;min-width:200px">
@@ -195,15 +195,15 @@
       ${body}`;
   };
   function scheduleGrid() {
-    const head = `<tr><th>Time</th>${Array.from({ length: 9 }, (_, i) => `<th>Court ${i + 1}</th>`).join("")}</tr>`;
+    const head = `<tr><th>Time</th>${D.COURT_LIST.map((c) => `<th>Court ${c}</th>`).join("")}</tr>`;
     const rows = D.slots.map((sl) => {
-      const cells = Array(9).fill(`<td class="muted tiny">${sl.id === "SF" || sl.id === "MEDAL" ? "Standby" : ""}</td>`);
+      const cells = Array(D.COURT_LIST.length).fill(`<td class="muted tiny">${sl.id === "SF" || sl.id === "MEDAL" ? "Standby" : ""}</td>`);
       let t0 = sl.start;
       sl.ties.forEach((id) => {
         const s = X.summary(X.tieById[id]); t0 = s.time;
         s.games.forEach((g) => {
           const has = g.a !== null && g.status !== "scheduled";
-          cells[g.court - 1] = `<td class="cell ${g.status}"><div class="k">${esc(s.tie.short)} · ${g.code}</div>
+          const ci = D.COURT_LIST.indexOf(+g.court); if (ci >= 0) cells[ci] = `<td class="cell ${g.status}"><div class="k">${esc(s.tie.short)} · ${g.code}</div>
             <div>${s.a ? esc(s.a) : `<span class="ph">${esc(s.pa)}</span>`} vs ${s.b ? esc(s.b) : `<span class="ph">${esc(s.pb)}</span>`}</div>
             ${has ? `<div class="sc">${g.a}–${g.b}${g.status === "live" ? " · live" : ""}</div>` : ""}</td>`;
         });
@@ -211,7 +211,7 @@
       return `<tr><td class="t">${X.fmt(t0)}<div class="tiny muted">${esc(sl.short)}</div></td>${cells.join("")}</tr>`;
     }).join("");
     return `<div class="sgrid-wrap mt"><table class="sgrid">${head}${rows}</table></div>
-      <p class="small muted">MD = Men's Doubles · WD = Women's Doubles · XD = Mixed Doubles. 12:10–12:35 PM reserved for standings & playoff lineups. Courts 7–9 on standby during playoffs.</p>`;
+      <p class="small muted">MD = Men's Doubles · WD = Women's Doubles · XD = Mixed Doubles. 12:10–12:35 PM reserved for standings & playoff lineups. Courts 10–12 on standby during playoffs.</p>`;
   }
 
   views.standings = () => {
@@ -303,7 +303,7 @@
   views.tv = () => {
     document.body.classList.add("tv");
     const es = X.eventStatus();
-    const courts = Array.from({ length: D.COURTS }, (_, i) => X.courtQueue(i + 1));
+    const courts = D.COURT_LIST.map((c) => X.courtQueue(c));
     const up = Updates.list()[0];
     return `<div class="tv"><div class="tv-head"><div><div class="title">PYS OPEN</div><div class="muted">${esc(E.venue)}, ${esc(E.city)} · ${esc(es.title)} — ${esc(es.text)}</div></div>
       <div style="text-align:right"><div class="tv-clock" id="tv-clock"></div><div class="small muted">Follow live on your phone: <b style="color:var(--accent)">${esc(location.host + location.pathname)}</b></div></div></div>

@@ -15,7 +15,8 @@ window.PYS_DATA = (function () {
     { code: "XD", name: "Mixed Doubles", short: "Mixed" }
   ];
 
-  const C1 = [1, 2, 3], C2 = [4, 5, 6], C3 = [7, 8, 9];
+  const C1 = [1, 2, 3], C2 = [4, 5, 9], C3 = [10, 11, 12];
+  const COURT_LIST = [1, 2, 3, 4, 5, 9, 10, 11, 12]; // courts in use
 
   // [bracket, round, start, end, lineupDue, [[teamA, teamB] x3 on C1,C2,C3]]
   const RR = [
@@ -61,5 +62,5 @@ window.PYS_DATA = (function () {
     { time: "14:45", text: "Awarding ceremony 2:45–3:00 PM" }
   ];
 
-  return { BRACKETS, GAMES, ties, slots, COURTS: 9, NOTES };
+  return { BRACKETS, GAMES, ties, slots, COURTS: 9, COURT_LIST, NOTES };
 })();
